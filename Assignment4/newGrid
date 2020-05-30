@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define ROWS 20
+#define COLS 40
+
+/* 
+ * Program Name: printGrid.c
+ * Author(s): Tina Tissington
+ * Purpose: Searching for a name in a specific decade.
+ */ 
+
+int newGrid (grid[ROWS][COLS]) {
+
+	
+
+	return(0);
+}

@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*
+	Program Name: poetry.c
+	Author: Tina Tissington
+	Last Update: Jan. 7, 2020
+	Function: Output number of lines, words, and words per line of an inputted poem.
+	Compilation: gcc -ansi -o poetry poetry.c
+	Execution: ./poetry
+*/
+int wordCount(char input[]);
+
+int main ( int argc, char argv[]) {
+
+   int lines = 0;
+   int words = 0;
+   char input[100000];
+   int wdPerLn[100];
+   int totalWords = 0;
+
+   printf("Enter poem:\n");
+
+   while (strcmp(input, ".") != 0) {
+      fgets(input, 100000, stdin);
+      input[strlen(input-1)] = '\0';
+
+      wordCount(input);
+      wdPerLn[lines] = words;
+      totalWords += words;
+      lines++;
+   }
+
+   printf("%d words on %d lines.\n", totalWords, lines-1);
+   /*printf("%d %d %d\n", wdPerLn[)*/
+
+   return (0);
+}
+
+int wordCount(char input[]) {
+
+   int words = 0;
+   int x;
+
+   for (x=0; input[x] != '\0'; x++) {
+      if ((input[x] == ' ') && (input[x+1] != ' ')) {
+         words++;
+      }
+   }
+
+   return (words);
+}
